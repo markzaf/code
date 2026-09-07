@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Design tokens and small utilities */
+:root{
+  --brand: #FF2D55;
+  --accent: #0A84FF;
+  --surface: #F6F7F9;
+  --text: #111827;
+  --midgray: #6B7280;
+}
+
+/* Accessible focus ring */
+:focus{
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(10,132,255,0.12);
+  border-radius: 8px;
+}
+
+/* Minimal player chrome */
+.player-controls-hidden .controls {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms;
+}
+.player-controls-visible .controls {
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 150ms;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
